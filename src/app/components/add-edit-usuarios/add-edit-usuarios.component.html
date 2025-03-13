@@ -1,0 +1,49 @@
+<div class="row mt-1">
+    <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+        <div class="card text-white bg-secondary mb-4">
+            <div class="card-header text-center">Registrar Usuario</div>
+            <div class="card-body">
+
+                <div *ngIf="mensajeExito" class="alert alert-success text-center">
+                    {{ mensajeExito }}
+                </div>
+                <form #usuarioForm="ngForm" (ngSubmit)="guardarUsuario()">
+                    
+                    <div>
+                        <label for="exampleInputNombre" class="form-label mt-2">Nombre</label>
+                        <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control" id="exampleInputNombre" placeholder="Nombre">
+                    </div>
+
+                    <div>
+                        <label for="exampleInputApellidos" class="form-label mt-2">Apellidos</label>
+                        <input [(ngModel)]="usuario.apellidos" name="apellidos" type="text" class="form-control" id="exampleInputApellidos" placeholder="Apellidos">
+                    </div>
+                    
+                    <div>
+                        <label for="exampleInputEmail1" class="form-label mt-2">Email</label>
+                        <input [(ngModel)]="usuario.email" name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+
+                    <div>
+                        <label for="exampleSelect1" class="form-label mt-2">Rol</label>
+                        <select [(ngModel)]="usuario.rol" name="rol" class="form-select" required>
+                            <option>Elige opción</option>
+                            <option>Usuario</option>
+                            <option>Administrador</option>
+                        </select>
+                    </div>
+
+                    <div class="row mt-3 text-center">
+                        <div class="col-6">
+                            <button (click)="volver()" type="button" class="btn btn-secondary w-100">Volver</button>
+                        </div>
+                        <div class="col-6">
+                            <button [disabled]="usuarioForm.invalid" type="submit" class="btn btn-primary w-100">Aceptar</button>
+                        </div>
+                    </div>
+
+                </form>     
+            </div>
+        </div>
+    </div>
+</div>

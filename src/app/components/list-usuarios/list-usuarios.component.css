@@ -1,0 +1,23 @@
+.title {
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+.table {
+    background-color: transparent !important;
+  }
+  .table th, .table td {
+    background-color: transparent !important;
+    color: inherit; /* Mantiene el color del texto */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Opcional: Bordes sutiles */
+  }
+  
+@media (max-width: 768px) {
+    .title {
+        flex-direction: column; 
+        text-align: center; 
+    }
+}

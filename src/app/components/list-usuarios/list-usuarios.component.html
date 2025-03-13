@@ -1,0 +1,35 @@
+<div class ="container">
+    <div class="title">
+        <h4>Listado de Usuarios</h4>
+        
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Email</th>
+            <th scope="col">Rol</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor= "let  usuario of listUsuarios" class="table-primary">
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellidos }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.rol }}</td>
+            <td>
+              <button  routerLink="/edit/{{ usuario.id }}" type="button" class="btn btn-info btn-sm">
+                <i class="fas fa-edit "></i>
+              </button>
+              <button  (click)="deleteUsuario(usuario.id)" type="button" class="btn btn-secondary btn-sm">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
